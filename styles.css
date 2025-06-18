@@ -126,8 +126,7 @@ button {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  flex: 1;
+  justify-content: center;
   min-width: 250px; /*evita que se quebre fácil */
 }
 
@@ -219,7 +218,7 @@ button {
 
   .info-video {
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     gap: 12px;
@@ -232,7 +231,7 @@ button {
   }
 
   .channel-actions {
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: flex-start;
     gap: 4px;
   }
