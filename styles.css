@@ -59,7 +59,7 @@ body {
 button {
   color: black;
   border: none;
-  padding: 20px 46px;
+  padding: 8px 16px;
   border-radius: 40px;
   cursor: pointer;
   background-color: white;
@@ -107,12 +107,15 @@ button {
   border: none;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
 }
 
 .subscribe {
   border-radius: 20px;
   margin: 10px;
   cursor: pointer;
+  flex-shrink: 0; /*impede que o botão encolha demais */
 }
 
 .subscribe:hover {
@@ -122,7 +125,10 @@ button {
 .channel-actions {
   display: flex;
   gap: 12px;
-  margin: 0 15px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 250px; /*evita que se quebre fácil */
 }
 
 .channel-actions button {
@@ -153,7 +159,9 @@ button {
 }
 
 .description p {
-  margin-right: 23rem;
+  margin-right: 0;
+  max-width: 100%;
+  line-height: 1.5;
 }
 
 .description span {
@@ -181,4 +189,66 @@ button {
   margin: 0;
 
   font-size: 12px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .container-left,
+  .container-right {
+    width: 100%;
+  }
+
+  .navbar {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .search-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .input {
+    width: 60%;
+  }
+
+  .info-video {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .subscribe {
+    max-width: 200px;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  .channel-actions {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 4px;
+  }
+
+  .video-recomendado {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .video-info p {
+    font-size: 11px;
+  }
+
+  .description p {
+    margin-right: 0;
+    max-width: 100%;
+  }
 }
